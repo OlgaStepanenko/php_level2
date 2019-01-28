@@ -9,27 +9,22 @@
 <?php
 
 class products {
-    public $category = "канц.товары";
-    public $name = "карандаш";
+    public $category = "канцелятские товары";
     public $price = "45";
 
-    function __construct($category, $name, $price) {
+    function __construct($category, $price) {
         $this->category = $category;
-        $this->name = $name;
         $this->price = $price;
         $this->getInfoProduct();
     }
 
     function getInfoProduct () {
-        echo "Товар категории".$this->category."называется".$this->name."и стоит".$this->price."рублей";
+        echo "Товары категории".$this->category."продаются по цене от".$this->price."рублей"."<br>";
     }
 }
 
-new products(" Канцелярские товары ", " Карандаш ", " 30 "); 
+new products(" Канцелярские товары ", " 30 "); 
 
-class pencilsKindOf extends products {
-    
-}
 ?>
 </body>
 </html>
