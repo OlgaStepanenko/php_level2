@@ -1,7 +1,7 @@
 <?php
 include './class.products.php';
 
-class colourPencils extends products {
+class ColourPencils extends Products {
     public $name = " Цветные карандаши ";
     public $numberOfColors = " 18 ";
 
@@ -19,5 +19,5 @@ class colourPencils extends products {
     }
 }
 
-$object = new colourPencils(" Канцелярские товары ", " Цветные карандаши", 40, 32);
+$object = new ColourPencils(" Канцелярские товары ", " Цветные карандаши", 40, 32);
 $object->getInfoColorPencils();

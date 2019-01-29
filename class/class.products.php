@@ -8,7 +8,7 @@
 
 <?php
 
-class products {
+class Products {
     public $category = "канцелятские товары";
     public $price = "45";
 
@@ -23,7 +23,7 @@ class products {
     }
 }
 
-new products(" Канцелярские товары ", " 30 "); 
+new Products(" Канцелярские товары ", " 30 "); 
 
 ?>
 </body>
