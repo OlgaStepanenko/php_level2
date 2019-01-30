@@ -19,7 +19,7 @@ class Products {
     }
 
     function getInfoProduct () {
-        echo "Товары категории".$this->category."продаются по цене от".$this->price."рублей"."<br>";
+        echo "Товары категории".$this->category."продаются по цене от ".$this->price."рублей"."<br>";
     }
 }
 

@@ -6,18 +6,17 @@ class ColourPencils extends Products {
     public $numberOfColors = " 18 ";
 
 
-    function __consrtuct($category, $name, $price, $numberOfColors) {
-        perent::__consrtuct($category, $price);
-        //$this->category = $category;
+    function __construct($category, $name, $price, $numberOfColors) {
+        parent::__construct($category, $price);
         $this->name = $name;
-        //$this->price = $price;
         $this->numberOfColors = $numberOfColors;
+        $this->getInfoColorPencils();
     }
 
     function getInfoColorPencils() {
-        echo $this->name.", количество цветов в упаковке".$this->numberOfColors;
+        echo $this->name.", количество цветов в упаковке ".$this->numberOfColors;
     }
 }
 
 $object = new ColourPencils(" Канцелярские товары ", " Цветные карандаши", 40, 32);
-$object->getInfoColorPencils();
+?>
