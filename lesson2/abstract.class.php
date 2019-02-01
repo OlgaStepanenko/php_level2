@@ -23,6 +23,48 @@ class DigitalGoods extends AbstractGoods {
     private $name;
     public $cost;
     private $purchasePrice;
+    public $profit;
+
+    function __construct($category, $name, $purchasePrice, $cost,) {
+        parent::__construct($category);
+
+        $this->name = $name;
+        $this->purchasePrice = $purchasePrice;
+        $this->sellPrice = $cost;
+    }
+
+    function getCategory() {
+        return $this->category;
+    }
+
+    function getCost() {
+        return $this->cost;
+    }
+
+    function getPurchasePrice() {
+        return $purchasePrice = $this->purchasePrice;
+    }
+
+    function getProfit() {
+        return $profit = ( $this->cost() - $this->purchasePrice );
+    }
+
+    function getShow() {
+        $displays  = "Категория: ".$this->category;"<br>"
+        $displays = "Название продукта: ".$this->name;"<br>"
+        $displays = "Закупочная стоимость:".$this->purchasePrice." рублей";"<br>"
+        $displays = "Стоимость товара:".$this->cost." рублей";"<br>"
+        $displays = "Доход с продажи:".$this->getProfit()." рублей";"<br>"
+        return $displays;
+    }
+
+
+    
+
+}
+
+
+
 
 
 
