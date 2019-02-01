@@ -9,7 +9,7 @@
 <?php
 
 abstract class AbstractGoods {
-    private $category;
+    protected $category;
     protected function __construct($category) {
         $this->category = $category;
     }
@@ -20,12 +20,12 @@ abstract class AbstractGoods {
 }
 
 class DigitalGoods extends AbstractGoods {	
-    private $name;
+    protected $name;
     public $cost;
-    private $purchasePrice;
+    protected $purchasePrice;
     public $profit;
 
-    function __construct($category, $name, $purchasePrice, $cost,) {
+    function __construct($category, $name, $purchasePrice, $cost) {
         parent::__construct($category);
 
         $this->name = $name;
@@ -50,18 +50,25 @@ class DigitalGoods extends AbstractGoods {
     }
 
     function getShow() {
-        $displays  = "Категория: ".$this->category;"<br>"
-        $displays = "Название продукта: ".$this->name;"<br>"
-        $displays = "Закупочная стоимость:".$this->purchasePrice." рублей";"<br>"
-        $displays = "Стоимость товара:".$this->cost." рублей";"<br>"
-        $displays = "Доход с продажи:".$this->getProfit()." рублей";"<br>"
+        $displays  = "Категория: ".$this->category;"<br>";
+        $displays = "Название продукта: ".$this->name;"<br>";
+        $displays = "Закупочная стоимость:".$this->purchasePrice." рублей";"<br>";
+        $displays = "Стоимость товара:".$this->cost." рублей";"<br>";
+        $displays = "Доход с продажи:".$this->getProfit()." рублей";"<br>";
         return $displays;
-    }
-
-
-    
+    } 
 
 }
+
+//class PieceGoods extends PackagedGoods {
+    //function __construct($category, $artNum, $name, $purchasePrice, $sellPrice, $discount) {
+        //parent::__construct($category, $artNum, $name, $purchasePrice, $sellPrice, $discount);
+    //}
+    //function setSellPrice(){
+      //  return $this->sellPrice = ( parent::sellPrice / 2 );
+    //}
+//}
+
 
 
 
