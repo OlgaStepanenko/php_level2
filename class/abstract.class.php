@@ -60,14 +60,14 @@ class DigitalGoods extends AbstractGoods {
 
 }
 
-//class PieceGoods extends PackagedGoods {
-    //function __construct($category, $artNum, $name, $purchasePrice, $sellPrice, $discount) {
-        //parent::__construct($category, $artNum, $name, $purchasePrice, $sellPrice, $discount);
-    //}
-    //function setSellPrice(){
-      //  return $this->sellPrice = ( parent::sellPrice / 2 );
-    //}
-//}
+class EBooks extends DigitalGoods {
+    function __construct($category, $name, $purchasePrice, $cost) {
+        parent::__construct($category, $name, $purchasePrice, $cost);
+    }
+    function setCost() {
+        return $this->cost = ( parent::cost / 2 );
+    }
+}
 
 
 
