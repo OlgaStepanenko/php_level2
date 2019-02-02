@@ -50,12 +50,8 @@ class AllGoods extends AbstractGoods {
     }
 
     function getShow() {
-        $displays  = "Категория: ".$this->category;"<br>";
-        $displays = "Название продукта: ".$this->name;"<br>";
-        $displays = "Закупочная стоимость:".$this->purchasePrice." рублей";"<br>";
-        $displays = "Стоимость товара:".$this->cost." рублей";"<br>";
-        $displays = "Доход с продажи:".$this->getProfit()." рублей";"<br>";
-        return $displays;
+        $information  = "Категория: ".$this->category." Название продукта: ".$this->name." Закупочная стоимость: ".$this->purchasePrice." рублей. "."Стоимость товара: ".$this->cost." рублей. "." Доход с продажи: ".$this->getProfit()." рублей";
+        return $information;
     } 
 
 }
@@ -78,7 +74,7 @@ class DigitalGoods extends AllGoods {
         parent::__construct($category, $name, $purchasePrice, $cost);
     }
     function getProfit() {
-        return $profit = ( parent::cost / (1/2 * $cost );
+        return $profit = 1/2 * $cost;
     }
 }
 
@@ -94,6 +90,14 @@ class WeightGoods extends AllGoods {
     }
 }
 
+$cup = new PieceGoods ("Поштучный товар", "Кружка", 100, 300, 5 );
+$eBooks = new DigitalGoods ("Цифровой товар", "Электронная книга", 1/2 * $cup->cost );
+$nuts = new WeightGoods ("Товар на вес", "Орехи", 200, 500, 5);
+echo $cup->getShow();
+echo '<br>';
+echo $eBooks->getShow();
+echo '<br>';
+echo $nuts->getShow();    
 
 
 
