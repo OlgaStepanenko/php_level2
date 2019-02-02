@@ -30,7 +30,7 @@ class AllGoods extends AbstractGoods {
 
         $this->name = $name;
         $this->purchasePrice = $purchasePrice;
-        $this->sellPrice = $cost;
+        $this->cost = $cost;
     }
 
     function getCategory() {
@@ -74,7 +74,7 @@ class DigitalGoods extends AllGoods {
         parent::__construct($category, $name, $purchasePrice, $cost);
     }
     function getProfit() {
-        return $profit = 1/2 * $cost;
+        return $profit = $this->cost - $this->purchasePrice;
     }
 }
 
@@ -91,7 +91,7 @@ class WeightGoods extends AllGoods {
 }
 
 $cup = new PieceGoods ("Поштучный товар", "Кружка", 100, 300, 5 );
-$eBooks = new DigitalGoods ("Цифровой товар", "Электронная книга", 1/2 * $cup->cost );
+$eBooks = new DigitalGoods ("Цифровой товар", "Электронная книга", 100, $cup->cost/2 );
 $nuts = new WeightGoods ("Товар на вес", "Орехи", 200, 500, 5);
 echo $cup->getShow();
 echo '<br>';
