@@ -19,7 +19,7 @@ abstract class AbstractGoods {
     abstract function getProfit();
 }
 
-class DigitalGoods extends AbstractGoods {	
+class AllGoods extends AbstractGoods {	
     protected $name;
     public $cost;
     protected $purchasePrice;
@@ -60,14 +60,40 @@ class DigitalGoods extends AbstractGoods {
 
 }
 
-class EBooks extends DigitalGoods {
+class PieceGoods extends AllGoods {
+    protected $quantity;
+    function __construct ($category, $name, $purchasePrice, $cost, $quantity) {
+        parent::__construct($category, $name, $purchasePrice, $cost);
+        $this->quantity = $quantity;
+    }
+    
+    function getProfit() {
+        return $profit = ( $this->cost * $this->quantity - $this->purchasePrice * $this->quantity );
+    }
+}
+
+
+class DigitalGoods extends AllGoods {
     function __construct($category, $name, $purchasePrice, $cost) {
         parent::__construct($category, $name, $purchasePrice, $cost);
     }
-    function setCost() {
-        return $this->cost = ( parent::cost / 2 );
+    function getProfit() {
+        return $profit = ( parent::cost / (1/2 * $cost );
     }
 }
+
+class WeightGoods extends AllGoods {
+    protected $weight;
+    function __construct ($category, $name, $purchasePrice, $cost, $weight) {
+        parent::__construct($category, $name, $purchasePrice, $cost);
+        $this->weight = $weight;
+    }
+    
+    function getProfit() {
+        return $profit = ( $this->cost * $this->weight - $this->purchasePrice * $this->weight );
+    }
+}
+
 
 
 
