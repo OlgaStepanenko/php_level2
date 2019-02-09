@@ -34,7 +34,7 @@ function getReviewes ($mysqliConnect) {
 
 
 function getCatalog ($mysqliConnect) {
-	$sql = sprintf("SELECT * FROM product WHERE deleted_at is null");
+	$sql = sprintf("SELECT * FROM product WHERE deleted_at is null LIMIT 3");
 	$stmt = mysqli_query($mysqliConnect, $sql);
 	$product = [];
 	while ($row = mysqli_fetch_assoc($stmt)) {
@@ -43,6 +43,7 @@ function getCatalog ($mysqliConnect) {
 	return $product;
 
 }
+
 
 function getProduct ($mysqliConnect) {
 	$sql = sprintf("SELECT * FROM product WHERE id >0");
