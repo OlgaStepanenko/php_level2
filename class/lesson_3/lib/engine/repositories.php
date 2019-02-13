@@ -83,3 +83,15 @@ function deleteProduct ($mysqliConnect, $id) {
 }
 
 
+
+function getLogin ($mysqliConnect) {
+	$sql = sprintf("SELECT * FROM users WHERE id > 0");
+	$stmt = mysqli_query($mysqliConnect, $sql);
+	$login = [];
+	while ($row = mysqli_fetch_assoc($stmt)) {
+		$login [] = $row;
+	}
+	return $login;
+
+}
+
